@@ -1,5 +1,3 @@
-import { Badge } from "@material-ui/core";
-import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
@@ -44,6 +42,7 @@ const Input = styled.input`
 
 const Logo = styled.h1`
   font-weight: bold;
+  letter-spacing: 0.1em;
   ${mobile({ fontSize: "24px" })}
 `;
 const Right = styled.div`
@@ -60,6 +59,8 @@ const MenuItem = styled.div`
   font-weight: 600;
   cursor: pointer;
   margin-left: 50px;
+  letter-spacing: 0.2em;
+
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 
   &:hover {

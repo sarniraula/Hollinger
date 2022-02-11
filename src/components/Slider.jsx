@@ -1,4 +1,4 @@
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
+import { FavoriteBorderOutlined ,ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import { useState } from "react";
 import styled from "styled-components";
 import { sliderItems } from "../data";
@@ -56,6 +56,9 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   // height: 80%;
   width: 100%;
+  background-position: top;
+  background-size: cover;
+
 `;
 
 const InfoContainer = styled.div`
@@ -73,6 +76,7 @@ const Title = styled.h1`
   font-size: 50px;
   color: white;
   text-align: center;
+  letter-spacing: 0.2em;
 `;
 
 const Desc = styled.p`
@@ -83,7 +87,14 @@ const Desc = styled.p`
   letter-spacing: 3px;
   color: white;
   text-align: center;
+  letter-spacing: 0.2em;
 `;
+
+const HLine = styled.hr`
+  width: 50px;
+  color: white;
+  margin: 20px auto;
+`
 
 // const Button = styled.button`
 //   padding: 10px;
@@ -114,7 +125,10 @@ const Slider = () => {
               <Image src={item.img} />
             </ImgContainer>
             <InfoContainer>
-              <Title>{item.title}</Title>
+              <FavoriteBorderOutlined style={{color: "white"}}/>
+              <Title>{item.title}
+                <HLine />
+              </Title>
               <Desc>{item.desc}</Desc>
               {/* <Button>SHOW NOW</Button> */}
             </InfoContainer>

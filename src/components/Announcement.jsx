@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { LocationOn, Phone } from "@material-ui/icons";
+
 
 const Container = styled.div`
   height: 50px;
@@ -7,13 +9,26 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: right;
-  font-size: 14px;
-  font-weight: 500;
   padding-right: 30px;
 `;
 
+const ContactItem = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans";
+  font-size: 10px;
+  font-weight: 400;
+  padding-right: 30px;
+  letter-spacing: 0.2em;
+`
+
 const Announcement = () => {
-  return <Container>Super Deal! Free Shipping on Orders Over $50</Container>;
+  return <Container>
+            <ContactItem><LocationOn/>PATANDHOKA, LALITPUR</ContactItem>
+            <ContactItem><Phone/> 984563214</ContactItem>
+            <ContactItem>WWW.HOLLINGER.COM</ContactItem>
+          </Container>;
 };
 
 export default Announcement;
