@@ -1,19 +1,12 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
+
 const Container = styled.div`
   flex: 1;
   margin: 3px;
-  height: 70vh;
+  height: 35vh;
   position: relative;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  ${mobile({ height: "20vh" })}
-
 `;
 
 const Info = styled.div`
@@ -29,26 +22,47 @@ const Info = styled.div`
 `;
 
 const Title = styled.h1`
-    color:white;
+    font-family: "Roboto Condensed";
+    font-weight: 500;
+    margin: 20px 0px 28px;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+`;
+
+const Description = styled.h1`
+    font-size: 14px;
+    font-weight: 300;
+    width: 70%;
+    margin: 0px 28px;
+    line-height: 2;
+    text-align: center;
+    color: #4a4c4e;
     margin-bottom: 20px;
 `;
 
 const Button = styled.button`
-    border:none;
+    border:2px solid black;
     padding: 10px;
     background-color: white;
     color:gray;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 400;
 `;
+
+const IconSrc = styled.img`
+  width: 50px;
+  opacity: 60%;
+`
 
 const CategoryItem = ({ item }) => {
   return (
     <Container>
-      <Image src={item.img} />
       <Info>
+        <IconSrc src={item.icon}/>
         <Title>{item.title}</Title>
-        <Button>SHOP NOW</Button>
+        <Description>{item.desc}</Description>
+        <Button>{item.button}</Button>
       </Info>
     </Container>
   );

@@ -41,6 +41,7 @@ const Input = styled.input`
 `;
 
 const Logo = styled.h1`
+  font-family: "Urbanist";
   font-weight: bold;
   letter-spacing: 0.1em;
   ${mobile({ fontSize: "24px" })}

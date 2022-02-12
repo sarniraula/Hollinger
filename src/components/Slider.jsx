@@ -56,9 +56,9 @@ const ImgContainer = styled.div`
 const Image = styled.img`
   // height: 80%;
   width: 100%;
-  background-position: top;
+  background-position: center;
   background-size: cover;
-
+ 
 `;
 
 const InfoContainer = styled.div`

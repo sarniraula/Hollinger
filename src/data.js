@@ -1,3 +1,6 @@
+import { Restaurant } from "@material-ui/icons";
+import TakeAway from "./assets/take-away.png";
+
 export const sliderItems = [
     {
       id: 1,
@@ -25,19 +28,43 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "SHIRT STYLE!",
+      title: "DAILY NEW, FRESH MENUS",
+      icon: "https://cdn-icons-png.flaticon.com/512/15/15417.png",
+      desc: "Our chefs use fresh, seasonal ingredients to make affordable, tasty, nourishing meals.",
+      button: "SEE MENU",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "LOUNGEWEAR LOVE",
+      title: "WE DELIVER TO YOUR HOME",
+      icon: "https://cdn-icons.flaticon.com/png/512/5637/premium/5637217.png?token=exp=1644650046~hmac=8f91e8404de6266b1e9ad76242eb87d5",
+      desc: "Order healthy food on-demand or schedule delivery up to a week in advance.",
+      button: "ORDER NOW",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      title: "LIGHT JACKETS",
+      title: "OUR COFFEE",
+      icon: "https://cdn-icons-png.flaticon.com/512/4566/4566304.png",
+      desc: "Have you tasted our Ethiopian natural Yirgacheffe yet? We think it’s rather special.",
+      button: "MORE INFO",
     },
+    {
+      id: 4,
+      title: "UPCOMING EVENTS",
+      icon: "https://cdn-icons.flaticon.com/png/512/2278/premium/2278049.png?token=exp=1644650219~hmac=b7b9ae3fe1b6d9b585672de296e1d664",
+      desc: "Join us for our annual summer BBQ and enjoy good food and even better company.",
+      button: "ALL EVENTS",
+    },
+  ];
+
+  export const exploreMenu = [
+    {
+      id:1,
+      img:"https://images.pexels.com/photos/2092906/pexels-photo-2092906.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      title: "WELCOME",
+      quote: "QUALITY IS AT HEART OF EVERYTHING WE DO.",
+      desc: "Our daily changing menu represents the best of what our local markets have to offer. Our passion for sourcing fresh ingredients from farmers and suppliers we know, combining with traditional flavors and rewriting familiar recipes into exceptional cuisine is our mission and greatest joy.",
+      button: "EXPLORE MENU",
+    }
   ];
 
   export const popularProducts = [
