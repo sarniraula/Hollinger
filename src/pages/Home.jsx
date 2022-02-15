@@ -7,6 +7,7 @@ import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
 import Slider from "../components/Slider";
 import ExploreMenu from "../components/ExploreMenu";
+import ChefSpecial from "../components/ChefSpecial";
 
 const Home = () => {
   return (
@@ -16,7 +17,8 @@ const Home = () => {
       <Slider />
       <Categories />
       <ExploreMenu />
-      <Products/>
+      <ChefSpecial />
+      {/* <Products/> */}
       <Newsletter/>
       <Footer/>
     </div>

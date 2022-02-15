@@ -67,6 +67,24 @@ export const sliderItems = [
     }
   ];
 
+  export const chefSpecial = [
+    {
+      id:1,
+      infoTitle: "SEAFOOD ‘TOBAN YAKI’",
+      infoDesc: "sweet prawns, scallops, king crab, bok choy, ginger, manila clams, oyster mushrooms, citrus butter",
+    },
+    {
+      id:2,
+      infoTitle: "MOMO - STEAMED DUMPLINGS",
+      infoDesc: "Your choice of Chicken, Buff or Vegetable Dumplings wrapped on flour dough and steamed Served with a sesame, chili and tomato chutney sauce",
+    },
+    {
+      id:3,
+      infoTitle: "CHIPS CHILLI",
+      infoDesc: "Fried potatoes mixed with chilli sauce and garnished with onion, bell peppers and tomatoes",
+    },
+  ]
+
   export const popularProducts = [
     {
       id:1,

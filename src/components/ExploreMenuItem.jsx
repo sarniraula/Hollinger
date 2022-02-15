@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const AContainer = styled.div`
+const Container = styled.div`
     background-color: white;
     width:70%;
+    height: 65vh;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -11,12 +12,13 @@ const AContainer = styled.div`
 
 const ImageContainer = styled.div`
     flex: 1;
+    width: 50%;
     height: 65vh;
 `
 
 const Image = styled.img`
-    max-height: 100%;
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 `
 
@@ -75,7 +77,7 @@ const Button = styled.button`
 
 const ExploreMenuItem = ({ item }) => {
   return (
-          <AContainer>
+          <Container>
             <ImageContainer>
                 <Image src={item.img}/>
             </ImageContainer>
@@ -90,7 +92,7 @@ const ExploreMenuItem = ({ item }) => {
                     {item.button}
                 </Button>
             </InfoContainer>
-          </AContainer>
+          </Container>
   )
 }
 
