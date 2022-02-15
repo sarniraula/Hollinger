@@ -1,5 +1,3 @@
-import { Restaurant } from "@material-ui/icons";
-import TakeAway from "./assets/take-away.png";
 
 export const sliderItems = [
     {

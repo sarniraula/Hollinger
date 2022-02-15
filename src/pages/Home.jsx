@@ -8,6 +8,7 @@ import Products from "../components/Products";
 import Slider from "../components/Slider";
 import ExploreMenu from "../components/ExploreMenu";
 import ChefSpecial from "../components/ChefSpecial";
+import Drinks from "../components/Drinks";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Categories />
       <ExploreMenu />
       <ChefSpecial />
+      <Drinks />
       {/* <Products/> */}
       <Newsletter/>
       <Footer/>

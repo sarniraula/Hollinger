@@ -9,7 +9,7 @@ const InfoTitle = styled.h1`
     letter-spacing: 0.05em;
     font-size: 16px;
     margin: 10px;
-    padding: 0 10px;;
+    padding: 0 10px;
 `
 const InfoDescription = styled.h1`
     text-align: center;
