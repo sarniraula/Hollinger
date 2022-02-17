@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import { coldPressedJuice } from '../menuData'
+import { coffees, coldPressedJuice, matchaItems } from '../menuData'
 
 const Container = styled.div`
     padding: 50px;
-    // height: 90vh;
+    // height: 120vh;
 `
 const BoxContainer = styled.div`
     display: flex;
     margin: 80px 0;
-    align-items: center;
+    // align-items: center;
     justify-content: center;    
 `
 
@@ -36,78 +36,98 @@ const LeftMenu = styled.div`
     border: 6px solid #eee;
     width: 25%;
 `
-const HorizontalDots = styled.hr`
-    border-top: 6px dotted #303033;
-    margin: 10px 0;
-`
 const HorizontalLine = styled.hr`
-    border-top: 6px solid #ffffff;
+    border-top : 6px ${props=>props.dots? "dotted": "solid"} ${props=>props.light? "white": "#303033"};
 `
-const DarkTitle = styled.div`
-    color: #303033;
-    font-family: 'Roboto Condensed';
-    font-size: 32px;
-    font-weight: 800;
-`
-
+ 
 const RightMenu = styled.div`
-    padding : 30px 30px;
-    background: #303033;
+    // background: #303033;
     width: 50%;
     margin: 0px 10px;
 `
-const LightTitle = styled.div`
-    color: #ffffff;
+const MenuTitle = styled.div`
+    // color: #ffffff;
     font-family: 'Roboto Condensed';
-    font-size: 32px;
+    font-size: ${props => props.block ? "32px" : "16px" };
+    color: ${props => props.light ? "#ffffff":"#303033"};
     font-weight: 800;
     margin: 10px 0px;
 `
+const MenuDescription = styled.h1`
+    font-size: 13px;
+    font-family: 'Open Sans';
+    width: 70%;
+    font-weight: 300;
+    margin: 10px 0px;
+    color: ${props => props.light ? "#cccccc":"#303033"};
+`
+
 const RightTop = styled.div`
-       
+    padding : 20px;
+    background: #303033;
 `
-const RightBottom = styled.div``
-const RightBottomLeft = styled.div``
-const RightBottomRight = styled.div``
-
-const ColdPressedJuiceContainer = styled.div`
-    background: #asdfsd;
-    margin: 20px 0;
+const RightBottom = styled.div`
+    display: flex;
+    margin: 10px 0;
 `
-const ColdPressedJuiceTitle = styled.h1`
-    font-size: 16px;
-    font-family: 'Roboto Condensed';
+const RightBottomLeft = styled.div`
+    padding : 20px 30px;
+    // border: 6px solid #eee;
+    width: 50%;
 `
-
-const ColdPressedJuiceDesc = styled.h1`
-    font-size: 13px;
-    font-family: 'Open Sans';
-    width: 70%;
-    font-weight: 300;
-    margin: 10px 0px;
+const RightBottomRight = styled.div`
+    padding : 30px 30px;
+    border: 6px solid #eee;
+    width: 50%;
+    margin-left: 10px;
 `
-const DescriptionItalic = styled.h1`
-    font-size: 13px;
-    font-family: 'Open Sans';
-    width: 70%;
-    font-weight: 300;
-    margin: 10px 0px;
-    font-style: italic;
-`
-
 
 
 const ColdPressedJuice = ({item}) => {
     return (
-      <ColdPressedJuiceContainer>
-          <ColdPressedJuiceTitle>{item.title}</ColdPressedJuiceTitle>
-          <ColdPressedJuiceDesc>{item.desc}</ColdPressedJuiceDesc>
-          <DescriptionItalic>{item.calories}</DescriptionItalic>
-
-      </ColdPressedJuiceContainer>
+      <>
+          <MenuTitle>{item.title}</MenuTitle>
+          <MenuDescription>{item.desc}</MenuDescription>
+          <MenuDescription>{item.calories}</MenuDescription>
+      </>
     )
   }
 
+
+const Coffee = ({item}) => {
+    return (
+      <>
+          <MenuTitle light>{item.title}</MenuTitle>
+          <MenuDescription light>{item.desc}</MenuDescription>
+          <MenuDescription>{item.calories}</MenuDescription>
+      </>
+    )
+  }
+
+const Coffees = styled.ul`
+  columns: 2;
+  padding: 20px 0px;
+  width: 100%;
+`
+
+const MatchaImage = styled.img`
+  width: 100%;
+  margin: 20px 0px;
+`
+
+const Matcha = ({item}) => {
+    return(
+        <>
+            <MenuTitle>{item.title}</MenuTitle>
+            <MenuDescription light>{item.desc}</MenuDescription>
+            <MenuDescription>{item.price}</MenuDescription>
+        </>
+    )
+}
+
+const MatchaMenu = styled.div`
+
+`
 
 const Drinks = () => {
   return (
@@ -116,29 +136,38 @@ const Drinks = () => {
         <Subtitle>WE SERVE ONLY HAND-CRAFTED SPECIALITY DRINKS WITH THE BEST ORGANIC INGREDIENTS</Subtitle>
         <BoxContainer>
             <LeftMenu>
-                <HorizontalDots></HorizontalDots>
-                <DarkTitle>COLD PRESSED JUICE</DarkTitle>
-                <HorizontalDots></HorizontalDots>
-
+                <HorizontalLine dots></HorizontalLine>
+                <MenuTitle block >COLD PRESSED JUICE</MenuTitle>
+                <HorizontalLine dots></HorizontalLine>
                     { coldPressedJuice.map((item)=>(
                         <ColdPressedJuice item={item} key={item.id}/>
                     ))}
-
             </LeftMenu>
             <RightMenu>
                 <RightTop>
-                    <LightTitle>COFFEE</LightTitle>
-                    <HorizontalLine></HorizontalLine>
-                    
+                    <MenuTitle block light>COFFEE</MenuTitle>
+                    <HorizontalLine light></HorizontalLine>
+                    <Coffees>
+                        { coffees.map((item)=>(
+                            <Coffee item={item} key={item.id}/>
+                        ))}
+                    </Coffees>
                 </RightTop>
-                    <RightBottom>
-                        <RightBottomLeft>
+                <RightBottom>
+                    <RightBottomLeft>
+                        <MenuTitle block>MATCHA</MenuTitle>
+                        <HorizontalLine></HorizontalLine>
+                        <MatchaImage src='https://images.pexels.com/photos/461428/pexels-photo-461428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'></MatchaImage>
+                        <MatchaMenu>
+                            { matchaItems.map((item)=> (
+                                <Matcha item={item} key={item.id}/>
+                            ))}
+                        </MatchaMenu>      
+                    </RightBottomLeft>
+                    <RightBottomRight>
 
-                        </RightBottomLeft>
-                        <RightBottomRight>
-
-                        </RightBottomRight>
-                    </RightBottom>
+                    </RightBottomRight>
+                </RightBottom>
             </RightMenu>
         </BoxContainer>
         
