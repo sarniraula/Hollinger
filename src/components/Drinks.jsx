@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { coffees, coldPressedJuice, matchaItems } from '../menuData'
+import { coffees, coldPressedJuice, matchaItems, otherBeverages } from '../menuData'
 
 const Container = styled.div`
-    padding: 50px;
-    // height: 120vh;
+    margin: 50px 0px;
 `
 const BoxContainer = styled.div`
     display: flex;
@@ -26,15 +25,17 @@ const Subtitle = styled.h1`
     color: #aaaaaa;
     font-family: 'Open Sans';
     letter-spacing: 0.1em;
-    font-weight: 400;
+    line-height: 2em;
+    font-weight: 500;
     font-size: 14px;
-    width: 30%;
+    width: 35%;
     margin: auto;
 `
 const LeftMenu = styled.div`
     padding : 30px 30px;
     border: 6px solid #eee;
-    width: 25%;
+    width: 20%;
+    height: 80vh;;
 `
 const HorizontalLine = styled.hr`
     border-top : 6px ${props=>props.dots? "dotted": "solid"} ${props=>props.light? "white": "#303033"};
@@ -43,7 +44,7 @@ const HorizontalLine = styled.hr`
 const RightMenu = styled.div`
     // background: #303033;
     width: 50%;
-    margin: 0px 10px;
+    margin: 0px 30px;
 `
 const MenuTitle = styled.div`
     // color: #ffffff;
@@ -54,12 +55,23 @@ const MenuTitle = styled.div`
     margin: 10px 0px;
 `
 const MenuDescription = styled.h1`
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Open Sans';
     width: 70%;
     font-weight: 300;
     margin: 10px 0px;
-    color: ${props => props.light ? "#cccccc":"#303033"};
+    color: ${props => props.light ? "#cccccc" : "#4a4c4e" };
+`
+
+const MenuPrice = styled.h1`
+    font-size: 14px;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    margin: 10px 0px;
+    font-style: italic;
+    width: 20%;
+    text-align: right;
+    color: ${props => props.light ? "#cccccc" : "#303033"};
 `
 
 const RightTop = styled.div`
@@ -76,31 +88,21 @@ const RightBottomLeft = styled.div`
     width: 50%;
 `
 const RightBottomRight = styled.div`
-    padding : 30px 30px;
-    border: 6px solid #eee;
+    padding : 20px 30px;
+    // border: 6px solid #eee;
     width: 50%;
     margin-left: 10px;
 `
 
-
-const ColdPressedJuice = ({item}) => {
-    return (
-      <>
-          <MenuTitle>{item.title}</MenuTitle>
-          <MenuDescription>{item.desc}</MenuDescription>
-          <MenuDescription>{item.calories}</MenuDescription>
-      </>
-    )
-  }
-
-
 const Coffee = ({item}) => {
     return (
-      <>
-          <MenuTitle light>{item.title}</MenuTitle>
-          <MenuDescription light>{item.desc}</MenuDescription>
-          <MenuDescription>{item.calories}</MenuDescription>
-      </>
+        <ColumnContainer>
+        <RowContainer>
+            <MenuTitle light>{item.title}</MenuTitle>
+            <MenuDescription light>{item.desc}</MenuDescription>
+        </RowContainer>
+        <MenuPrice light >{item.price}<sup>.00</sup></MenuPrice>
+    </ColumnContainer>
     )
   }
 
@@ -108,25 +110,36 @@ const Coffees = styled.ul`
   columns: 2;
   padding: 20px 0px;
   width: 100%;
+  margin-top: 10px;
 `
 
 const MatchaImage = styled.img`
   width: 100%;
   margin: 20px 0px;
 `
-
-const Matcha = ({item}) => {
+const ColumnContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`
+const RowContainer = styled.div`
+  width: 100%;
+  
+`
+const Menu = ({item}) => {
     return(
-        <>
-            <MenuTitle>{item.title}</MenuTitle>
-            <MenuDescription light>{item.desc}</MenuDescription>
-            <MenuDescription>{item.price}</MenuDescription>
-        </>
+        <ColumnContainer>
+            <RowContainer>
+                <MenuTitle>{item.title}</MenuTitle>
+                <MenuDescription>{item.desc}</MenuDescription>
+            </RowContainer>
+            <MenuPrice>{item.price}<sup>.00</sup></MenuPrice>
+        </ColumnContainer>
     )
 }
 
 const MatchaMenu = styled.div`
-
+    
 `
 
 const Drinks = () => {
@@ -140,8 +153,8 @@ const Drinks = () => {
                 <MenuTitle block >COLD PRESSED JUICE</MenuTitle>
                 <HorizontalLine dots></HorizontalLine>
                     { coldPressedJuice.map((item)=>(
-                        <ColdPressedJuice item={item} key={item.id}/>
-                    ))}
+                            <Menu item={item} key={item.id}/>
+                        ))}
             </LeftMenu>
             <RightMenu>
                 <RightTop>
@@ -160,12 +173,19 @@ const Drinks = () => {
                         <MatchaImage src='https://images.pexels.com/photos/461428/pexels-photo-461428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'></MatchaImage>
                         <MatchaMenu>
                             { matchaItems.map((item)=> (
-                                <Matcha item={item} key={item.id}/>
+                                <Menu item={item} key={item.id}/>
                             ))}
                         </MatchaMenu>      
                     </RightBottomLeft>
                     <RightBottomRight>
-
+                            <MenuTitle block>OTHER BEVERAGES</MenuTitle>
+                            <HorizontalLine></HorizontalLine>
+                            {/* <MatchaImage src='https://images.pexels.com/photos/461428/pexels-photo-461428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'></MatchaImage> */}
+                            <MatchaMenu>
+                                { otherBeverages.map((item)=> (
+                                    <Menu item={item} key={item.id}/>
+                                ))}
+                            </MatchaMenu>
                     </RightBottomRight>
                 </RightBottom>
             </RightMenu>

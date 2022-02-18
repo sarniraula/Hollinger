@@ -9,6 +9,9 @@ import Slider from "../components/Slider";
 import ExploreMenu from "../components/ExploreMenu";
 import ChefSpecial from "../components/ChefSpecial";
 import Drinks from "../components/Drinks";
+import WhatsNew from "../components/WhatsNew";
+import Gallery from "../components/Gallery";
+import Team from "../components/Team";
 
 const Home = () => {
   return (
@@ -20,6 +23,9 @@ const Home = () => {
       <ExploreMenu />
       <ChefSpecial />
       <Drinks />
+      <WhatsNew />
+      <Gallery />
+      <Team />
       {/* <Products/> */}
       <Newsletter/>
       <Footer/>
