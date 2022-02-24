@@ -12,6 +12,7 @@ import Drinks from "../components/Drinks";
 import WhatsNew from "../components/WhatsNew";
 import Gallery from "../components/Gallery";
 import Team from "../components/Team";
+import Hours from "../components/Hours";
 
 const Home = () => {
   return (
@@ -26,8 +27,9 @@ const Home = () => {
       <WhatsNew />
       <Gallery />
       <Team />
+      <Hours />
       {/* <Products/> */}
-      <Newsletter/>
+      {/* <Newsletter/> */}
       <Footer/>
     </div>
   );

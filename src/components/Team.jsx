@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components' 
-import { galleryImages } from '../galleryImages'
+import { teamImages } from '../teamData'
 
 
 const Container = styled.div`
@@ -31,18 +31,18 @@ const Subtitle = styled.h1`
 
 const TeamContainer = styled.div`
     display: flex;
-    width: 70%;
-    margin: 70px auto;
+    margin: 70px;
+    justify-content: center;
 `
 
 const ImageItem = styled.div`
-    margin: 0px 20px;
-    // width: 100%;
+    margin: 10px 20px;
 `
 const Image = styled.img`
     border-radius: 50%;
-    height: 20vh;
     object-fit: cover;
+    height: 20vh;
+    width: 20vh;
 `
 const Button = styled.button`
     margin: 24px auto;
@@ -52,28 +52,50 @@ const Button = styled.button`
     padding: 12px 15px;
     border: none;
     letter-spacing: 0.1em;
-    
 `
-
+const TeamItem = styled.div`
+    text-align: center;
+    // width: 50%;
+`
 const TeamTitle = styled.h1`
-
+    font-family: "Roboto Condensed";
+    font-size: 16px;
+    // letter-spacing: ;
+    font-weight: 700;
 `
 const TeamEmail = styled.h1`
-
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
 `
 const TeamFavFood = styled.h1`
-
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    width: 70%;
+    margin: auto;
 `
+const TeamPosition = styled.h1`
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+`
+
 const TeamDetails = ({item}) => {
     return(
-        <>
-        <ImageItem>
-            <Image src={item.image}></Image>
-        </ImageItem>
-        <TeamTitle>{item.title}</TeamTitle>
-        <TeamEmail>{item.email}</TeamEmail>
-        <TeamFavFood>{item.favFood}</TeamFavFood>
-        </>
+        <TeamItem>
+            <ImageItem>
+                <Image src={item.image}></Image>
+            </ImageItem>
+            <TeamTitle>{item.title}</TeamTitle>
+            <TeamPosition>{item.position}</TeamPosition>
+            <TeamEmail>{item.email}</TeamEmail>
+            <TeamFavFood>{item.favFood}</TeamFavFood>
+        </TeamItem>
     )
 }
 
@@ -83,7 +105,7 @@ const Team = () => {
         <Title>THE HOLLINGER TEAM</Title>
         <Subtitle>OUR TEAM WILL MAKE YOUR STAY AT SPOON AN UNFORGETTABLE ONE.</Subtitle>
         <TeamContainer>
-            {galleryImages.map((item) => (
+            {teamImages.map((item) => (
                 <TeamDetails item={item} key={item.id} />
             ))}
         </TeamContainer>

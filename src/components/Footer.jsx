@@ -1,17 +1,18 @@
 import {
   Facebook,
+  FavoriteBorderOutlined,
   Instagram,
-  MailOutline,
-  Phone,
   Pinterest,
-  Room,
   Twitter,
 } from "@material-ui/icons";
 import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
+margin-top: 70px;
   display: flex;
+  padding: 20px 0px;
+  background-color: #eee;
   ${mobile({ flexDirection: "column" })}
 `;
 
@@ -20,12 +21,20 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
+  background: #1a1c1e;
+  margin: 10px;
 `;
 
-const Logo = styled.h1``;
+const Logo = styled.h1`
+  color: white;
+`;
 
 const Desc = styled.p`
+  color: #aaaaaa;
+  font-family: "Open Sans";
+  font-size: 14px;
   margin: 20px 0px;
+  line-height: 3em;
 `;
 
 const SocialContainer = styled.div`
@@ -46,96 +55,90 @@ const SocialIcon = styled.div`
 
 const Center = styled.div`
   flex: 1;
-  padding: 20px;
+  // padding: 20px;
+  margin: 10px;
+
   ${mobile({ display: "none" })}
 `;
 
-const Title = styled.h3`
-  margin-bottom: 30px;
-`;
+const Image = styled.img`
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+`
 
-const List = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ListItem = styled.li`
-  width: 50%;
-  margin-bottom: 10px;
-`;
 
 const Right = styled.div`
   flex: 1;
+  background: #1a1c1e;
   padding: 20px;
+  margin: 10px;
   ${mobile({ backgroundColor: "#fff8f8" })}
 
 `;
 
-const ContactItem = styled.div`
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-`;
+const Button = styled.button`
+    border:2px solid white;
+    padding: 10px;
+    color: white;
+    background: none;
+    cursor: pointer;
+    font-weight: 400;
+    width: 40%;
+`
+// const Form = styled.form`
 
-const Payment = styled.img`
-    width: 50%;
-`;
+// `
+// const Label = styled.h1`
+
+// `
+// const Input = styled.input`
+
+// `
+// const Label = styled.form`
+
+// `
 
 const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo>LAMA.</Logo>
+        <Logo>HOLLINGER.</Logo>
         <Desc>
-          There are many variations of passages of Lorem Ipsum available, but
-          the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don’t look even slightly believable.
+          You can find us at <br></br>
+          PATAN DHOKA, LALITPUR<br></br>
+          WWW.HOLLINGER.COM 
+        </Desc>
+        <Button>VIEW ON GOOGLE MAPS</Button>
+        <Desc>
+          Or, call us at 9856641236<br></br>
+          You can make a reservation online by clicking <ahref>here</ahref>.<br></br>
+          See you. <FavoriteBorderOutlined style={{color: "white"}}/>
         </Desc>
         <SocialContainer>
-          <SocialIcon color="3B5999">
+          <SocialIcon color="1a1c1e">
             <Facebook />
           </SocialIcon>
-          <SocialIcon color="E4405F">
+          <SocialIcon color="1a1c1e">
             <Instagram />
           </SocialIcon>
-          <SocialIcon color="55ACEE">
+          <SocialIcon color="1a1c1e">
             <Twitter />
           </SocialIcon>
-          <SocialIcon color="E60023">
+          <SocialIcon color="1a1c1e">
             <Pinterest />
           </SocialIcon>
         </SocialContainer>
       </Left>
       <Center>
-        <Title>Useful Links</Title>
-        <List>
-          <ListItem>Home</ListItem>
-          <ListItem>Cart</ListItem>
-          <ListItem>Man Fashion</ListItem>
-          <ListItem>Woman Fashion</ListItem>
-          <ListItem>Accessories</ListItem>
-          <ListItem>My Account</ListItem>
-          <ListItem>Order Tracking</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Wishlist</ListItem>
-          <ListItem>Terms</ListItem>
-        </List>
+        <Image src="https://images.pexels.com/photos/3943178/pexels-photo-3943178.jpeg?cs=srgb&dl=pexels-cottonbro-3943178.jpg&fm=jpg"></Image>
       </Center>
       <Right>
-        <Title>Contact</Title>
-        <ContactItem>
-          <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
-        </ContactItem>
-        <ContactItem>
-          <Phone style={{marginRight:"10px"}}/> +1 234 56 78
-        </ContactItem>
-        <ContactItem>
-          <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
-        </ContactItem>
-        <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
+        {/* <Form>
+          <Label>Field</Label>
+          <Input name="field"/>
+          <Input type="submit">SEND</Input>
+        </Form> */}
       </Right>
     </Container>
   );

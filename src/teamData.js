@@ -1,21 +1,36 @@
-export const galleryImages = [
+export const teamImages = [
     {
         id: 1,
-        image:"https://images.pexels.com/photos/4551619/pexels-photo-4551619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", 
+        image:"https://img.freepik.com/free-photo/young-lady-t-shirt-pants-showing-victory-sign-eye-looking-joyful-front-view_176474-60718.jpg?w=1380",
+        
+        position: "CHEF DE CUISINE",
         title:"AARON",
-        email:"aaron@gmail.com",
-        favFood: "FAVORITE FOOD: GRILLED TALAPIA WITH CRAYFISH SAUCE"  
+        email:"AARON@GMAIL.COM",
+        favFood: "FAVORITE FOOD: GRILLED TALAPIA WITH CRAYFISH SAUCE",
     },
     {
         id: 2,
-        image:"https://images.pexels.com/photos/3026808/pexels-photo-3026808.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        image:"https://img.freepik.com/free-photo/medium-shot-happy-man-smiling_23-2148221808.jpg?w=1380",
+        position: "CHEF DE CUISINE",
+        title:"JEN",
+        email:"JEN@GMAIL.COM",
+        favFood: "FAVORITE FOOD: GRILLED TALAPIA WITH CRAYFISH SAUCE",
     },
     {
         id: 3,
-        image:"https://images.pexels.com/photos/6645917/pexels-photo-6645917.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        image:"https://img.freepik.com/free-photo/little-girl-t-shirt-jeans-pointing-left-with-index-fingers-looking-displeased-front-view_176474-89416.jpg?w=1380",
+        
+        position: "CHEF DE CUISINE",
+        title:"GEWN",
+        email:"GWEN@GMAIL.COM",
+        favFood: "FAVORITE FOOD: GRILLED TALAPIA WITH CRAYFISH SAUCE",
     },
     {
         id: 4,
-        image:"https://images.pexels.com/photos/4551619/pexels-photo-4551619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",     
+        image:"https://img.freepik.com/free-photo/woman-smiling-looking-camera_23-2148255231.jpg?w=740", 
+        position: "CHEF DE CUISINE",
+        title:"MILO",
+        email:"MILO@GMAIL.COM",
+        favFood: "FAVORITE FOOD: GRILLED TALAPIA WITH CRAYFISH SAUCE",     
     },
 ]
